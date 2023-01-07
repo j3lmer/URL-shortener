@@ -13,3 +13,26 @@ Template.showExistingLinks.helpers({
         return Urls.find({});
     },
 });
+
+Template.userInputForm.events({
+    "submit #submitForm"(event) {
+        event.preventDefault();
+        const text = event.target.text.value;
+
+        Urls.insert({
+            hash: self.crypto.randomUUID().slice(0,8),
+            link: text,
+            createdAt: new Date()
+        });
+
+        return false;
+    }
+});
+
+Template.url.events({
+    "submit #removeForm"(event) {
+        event.preventDefault();
+        Urls.remove(this._id)
+        return false;
+    }
+})

@@ -1,14 +1,20 @@
 TODO:
 
-wanneer input submitted: 
-    hash genereren
-    hash opslaan in mongodb
+- wanneer input submitted:
     route link genereren & opslaan
     route link teruggeven aan gebruiker
+    checken of een de lokaal gegenereerde hash al bestaat in de database
+    gebruikeraccounts + alleen eigen gegenereerde links tonen
 
 DOING:
 
 
 DONE:
-urls tabel maken met hash property
-text input maken voor de url van de gebruiker
+- urls tabel maken met hash property
+- text input maken voor de url van de gebruiker
+- input ophalen van textveld
+    hash genereren
+    hash opslaan in mongodb
+- entry verwijderen
+
+

@@ -29,7 +29,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col">
                 <div class="row my-3">
-                    {{>userInput}}
+                    {{>userInputForm}}
                 </div>
             </div>
         </div>
@@ -43,14 +43,15 @@
 </template>
 
 
-<template name="userInput">
+<template name="userInputForm">
     <div class="col col-4"></div>
-
     <div class="col col-4">
-        <div class="input-group flex-nowrap">
-            <input type="text" class="form-control" placeholder="Paste your URL here" aria-label="URL" aria-describedby="addon-wrapping">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go!</button>
-        </div>
+        <form id="submitForm" class="task-form">
+            <div class="input-group flex-nowrap">
+                <input type="text" name="text" class="form-control" placeholder="Paste your URL here" aria-label="URL">
+                <button class="btn btn-outline-secondary" type="submit" id="submitButton">Go!</button>
+            </div>
+        </form>
     </div>
     <div class="col col-4"></div>
 
@@ -58,14 +59,31 @@
 
 
 <template name="showExistingLinks">
-    <ul>
+    <div class="row">
         {{#each urls}}
-            {{>url}}
+            <div class="col ma-4">
+                {{>url}}
+            </div>
         {{/each}}
-    </ul>
+    </div>
 </template>
 
 <template name="url">
-    <li>hash: {{hash}}</li>
-    <li>link: {{link}}</li>
+    <div class="card my-2" style="width: 20rem;">
+        <div class="card-body">
+            <div class="card-title pb-2 border-bottom">
+                <div class="row ma-0 d-flex justify-content-between">
+                    <div class="col">
+                        <h5>{{link}}</h5>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <form id="removeForm" class="task-form">
+                            <button class="btn btn-danger pa-1 ma-0" type="submit">X</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <a class="card-text">{{hash}}</a>
+        </div>
+    </div>
 </template>
