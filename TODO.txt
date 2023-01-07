@@ -1,0 +1,14 @@
+TODO:
+urls tabel maken met hash property
+text input maken voor de url van de gebruiker
+wanneer input submitted: 
+    hash genereren
+    hash opslaan in mongodb
+    route link genereren & opslaan
+    route link teruggeven aan gebruiker
+
+DOING:
+
+
+DONE:
+

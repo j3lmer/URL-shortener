@@ -1,0 +1,35 @@
+<head>
+    <title>Url shortener</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta
+            name="viewport"
+            content="width=device-width, height=device-height, viewport-fit=cover, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+</head>
+
+<body>
+{{> mainContainer }}
+</body>
+
+<template name="mainContainer">
+    <div class="container">
+        <header>
+            <h1>Existing urls</h1>
+        </header>
+
+        <ul>
+            {{#each urls}}
+                {{> url}}
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
+
+<template name="url">
+    <li>hash: {{hash}}</li>
+    <li>link: {{link}}</li>
+</template>
