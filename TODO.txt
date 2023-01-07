@@ -3,7 +3,9 @@ TODO:
 - wanneer input submitted:
     route link genereren & opslaan
     route link teruggeven aan gebruiker
-    checken of een de lokaal gegenereerde hash al bestaat in de database
+    checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
+        als de link al bestaat (onder de current gebruiker), deze teruggeven
+        als de hash al bestaat, nieuwe hash genereren
     gebruikeraccounts + alleen eigen gegenereerde links tonen
 
 DOING:
