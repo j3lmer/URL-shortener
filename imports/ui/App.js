@@ -8,7 +8,7 @@ global.Popper = popper;
 
 import './App.html';
 
-Template.mainContainer.helpers({
+Template.showExistingLinks.helpers({
     urls() {
         return Urls.find({});
     },

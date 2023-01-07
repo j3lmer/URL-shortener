@@ -10,24 +10,60 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
 </head>
 
+
 <body>
 {{> mainContainer }}
 </body>
 
 <template name="mainContainer">
     <div class="container">
-        <header>
-            <h1>Existing urls</h1>
-        </header>
 
-        <ul>
-            {{#each urls}}
-                {{> url}}
-            {{/each}}
-        </ul>
+        <div class="row d-flex justify-content-center">
+            <div class="col text-center">
+                <header>
+                    <h1>Url shortener</h1>
+                </header>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col">
+                <div class="row my-3">
+                    {{>userInput}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col">
+                {{>showExistingLinks}}
+            </div>
+        </div>
     </div>
 </template>
 
+
+<template name="userInput">
+    <div class="col col-4"></div>
+
+    <div class="col col-4">
+        <div class="input-group flex-nowrap">
+            <input type="text" class="form-control" placeholder="Paste your URL here" aria-label="URL" aria-describedby="addon-wrapping">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go!</button>
+        </div>
+    </div>
+    <div class="col col-4"></div>
+
+</template>
+
+
+<template name="showExistingLinks">
+    <ul>
+        {{#each urls}}
+            {{>url}}
+        {{/each}}
+    </ul>
+</template>
 
 <template name="url">
     <li>hash: {{hash}}</li>
