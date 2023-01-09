@@ -1,8 +1,12 @@
 <template name="redirectContainer">
     <div class="row">
         <div class="col text-center mt-5">
-            <h2>Je word omgeleid naar</h2>
-                {{data}}
+            <h2>You're being redirected to:</h2>
+            <a href="{{url.link}}">{{url.link}}</a>
         </div>
     </div>
+
+    <script>
+        window.location.replace("{{url.link}}");
+    </script>
 </template>

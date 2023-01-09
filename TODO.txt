@@ -6,8 +6,8 @@ TODO:
         als de hash al bestaat, nieuwe hash genereren
     gebruikeraccounts + alleen eigen gegenereerde links tonen
 
-- redirecten naar daadwerkelijke url waar de gebruiker heen wil
 - user accounts, en alleen je eigen content zien
+    voeg userid toe wanneer link submitted
 DOING:
 
 
@@ -18,5 +18,7 @@ DONE:
     hash genereren
     hash opslaan in mongodb
 - entry verwijderen
+- redirecten naar daadwerkelijke url waar de gebruiker heen wil
+
 
 
