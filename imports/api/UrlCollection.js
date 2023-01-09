@@ -16,7 +16,7 @@ export const URLSchema = new SimpleSchema({
         type: Date,
         label: "Created at",
         autoValue: function () {
-            return new Date()
+            return new Date();
         }
     }
 });

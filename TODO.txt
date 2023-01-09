@@ -4,10 +4,9 @@ TODO:
     checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
         als de link al bestaat (onder de current gebruiker), deze teruggeven
         als de hash al bestaat, nieuwe hash genereren
-    gebruikeraccounts + alleen eigen gegenereerde links tonen
 
 - user accounts, en alleen je eigen content zien
-    voeg userid toe wanneer link submitted
+    voeg userid toe aan db entry wanneer link submitted
 DOING:
 
 
