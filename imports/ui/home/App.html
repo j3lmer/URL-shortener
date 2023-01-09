@@ -10,14 +10,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
 </head>
 
-
-<body>
-{{> mainContainer }}
-</body>
-
 <template name="mainContainer">
     <div class="container">
-
         <div class="row d-flex justify-content-center">
             <div class="col text-center">
                 <header>
@@ -54,7 +48,6 @@
         </form>
     </div>
     <div class="col col-4"></div>
-
 </template>
 
 
@@ -83,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <a class="card-text">{{hash}}</a>
+            <a class="card-text" href="/redirect/{{hash}}">{{hash}}</a>
         </div>
     </div>
 </template>

@@ -1,13 +1,13 @@
 TODO:
 
 - wanneer input submitted:
-    route link genereren & opslaan
-    route link teruggeven aan gebruiker
     checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
         als de link al bestaat (onder de current gebruiker), deze teruggeven
         als de hash al bestaat, nieuwe hash genereren
     gebruikeraccounts + alleen eigen gegenereerde links tonen
 
+- redirecten naar daadwerkelijke url waar de gebruiker heen wil
+- user accounts, en alleen je eigen content zien
 DOING:
 
 
