@@ -21,13 +21,6 @@ Template.login.events({
     "submit #loginForm"(event) {
         event.preventDefault()
         const children = event.target.children;
-        const data = {
-            username: children[0].value,
-            password: children[1].value
-        };
-
-        console.log(data);
-
-
+        Meteor.loginWithPassword(children[0].value, children[1].value);
     }
 })
