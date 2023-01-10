@@ -101,13 +101,11 @@
     </style>
     <div class="container d-flex justify-content-center align-items-center">
         <div class="card">
-<!--            {{#if isLoggingIn}}-->
-<!--                {{>login}}-->
-<!--            {{else}}-->
-<!--                {{>register}}-->
-<!--            {{/if}}-->
-
-                {{>loginButtons}}
+            {{#if isLoggingIn}}
+                {{>login}}
+            {{else}}
+                {{>register}}
+            {{/if}}
             <div class="p-3 d-flex flex-row justify-content-center align-items-center member">
             <span class="mr-1">Not a member? </span> <a href="#" class="text-decoration-none ml-2 changeMode">SIGNUP</a>
             </div>
@@ -120,13 +118,17 @@
         <h5>Login</h5>
     </div>
     <div class="p-3 px-4 py-4 border-bottom">
-        <form class="form loginForm">
+        <label>
             <input type="text" class="form-control mb-2" placeholder="Email/Username"/>
-            <input type="password" class="form-control" placeholder="Password"/>
+        </label>
+        <div class="form">
+            <label>
+                <input type="text" class="form-control" placeholder="Password"/>
+            </label>
             <!--                    <a href="#">Forgot?</a>-->
-            <button class="btn btn-danger btn-block continue mt-3" type="submit">Continue</button>
-        </form>
+        </div>
 
+        <button class="btn btn-danger btn-block continue">Continue</button>
     </div>
 
 </template>
@@ -136,11 +138,16 @@
         <h5>Sign Up</h5>
     </div>
     <div class="p-3 px-4 py-4 border-bottom">
-        <form class="form registerForm">
+        <label>
             <input type="text" class="form-control mb-2" placeholder="Email/Username"/>
-            <input type="password" class="form-control" placeholder="Password"/>
+        </label>
+        <div class="form">
+            <label>
+                <input type="text" class="form-control" placeholder="Password"/>
+            </label>
             <!--                    <a href="#">Forgot?</a>-->
-            <button class="btn btn-danger btn-block continue mt-3" type="submit">Continue</button>
-        </form>
+        </div>
+
+        <button class="btn btn-danger btn-block continue">Continue</button>
     </div>
 </template>
