@@ -8,7 +8,9 @@ TODO:
     login functionaliteit maken
     voeg userid toe aan db entry wanneer link submitted
 
-NTH: wachtwoord vergeten functionaliteit
+NTH:
+-wachtwoord vergeten functionaliteit
+-kleine popup geven bij falen in te loggen / registreren
 DOING:
 
 

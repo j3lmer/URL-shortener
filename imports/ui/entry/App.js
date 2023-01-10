@@ -23,6 +23,7 @@ Template.login.events({
         event.preventDefault();
         const children = event.target.children;
         Meteor.loginWithPassword(children[0].value, children[1].value);
+        return false;
     }
 });
 
@@ -31,6 +32,12 @@ Template.register.events({
     "submit #registerForm"(event) {
         event.preventDefault();
         const children = event.target.children;
+
+        if(children[1].value !== children[2].value) {
+            return false;
+        }
+
         Accounts.createUser({username: children[0].value, password: children[1].value});
+        return false;
     }
 });
