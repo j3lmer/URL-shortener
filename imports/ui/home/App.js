@@ -1,6 +1,5 @@
 import {Template} from 'meteor/templating';
 import {Urls} from "../../api/UrlCollection.js";
-
 import './App.html';
 
 Template.showExistingLinks.helpers({
@@ -14,6 +13,12 @@ Template.url.helpers({
         return `${window.location.origin}/redirect/${crypt.hash.crypt}`;
     }
 });
+
+Template.navBar.events({
+    "click #loginBtn"(event) {
+        window.location.replace("/entry");
+    }
+})
 
 Template.userInputForm.events({
     "submit #submitForm"(event) {
@@ -35,4 +40,4 @@ Template.url.events({
         Urls.remove(this._id);
         return false;
     }
-})
+});

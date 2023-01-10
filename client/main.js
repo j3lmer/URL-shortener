@@ -7,6 +7,7 @@ global.Popper = popper;
 
 import '/imports/ui/home/App.js';
 import '/imports/ui/redirect/App.js';
+import '/imports/ui/entry/App.js';
 
 FlowRouter.route('/', {
     name: 'home',
@@ -21,3 +22,10 @@ FlowRouter.route('/redirect/:hash', {
         BlazeLayout.render("redirectContainer");
     }
 });
+
+FlowRouter.route('/entry', {
+    name: 'entry',
+    action() {
+        BlazeLayout.render("entryContainer")
+    }
+})

@@ -1,12 +1,14 @@
 TODO:
-
 - wanneer input submitted:
     checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
         als de link al bestaat (onder de current gebruiker), deze teruggeven
         als de hash al bestaat, nieuwe hash genereren
 
 - user accounts, en alleen je eigen content zien
+    login functionaliteit maken
     voeg userid toe aan db entry wanneer link submitted
+
+NTH: wachtwoord vergeten functionaliteit
 DOING:
 
 
@@ -18,6 +20,7 @@ DONE:
     hash opslaan in mongodb
 - entry verwijderen
 - redirecten naar daadwerkelijke url waar de gebruiker heen wil
+-loginpagina maken
 
 
 
