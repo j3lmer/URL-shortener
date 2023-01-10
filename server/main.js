@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Urls } from "../imports/api/UrlCollection";
+// import {Users} from "../imports/api/UserCollection";
 import { Accounts } from 'meteor/accounts-base';
 
 const SEED_USERNAME = 'meteorite';
