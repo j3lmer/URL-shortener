@@ -1,3 +1,4 @@
+import {Accounts} from "meteor/accounts-base";
 import "./App.html";
 
 Template.entryContainer.onCreated(function entryOnCreated(){
@@ -19,8 +20,17 @@ Template.entryContainer.helpers({
 
 Template.login.events({
     "submit #loginForm"(event) {
-        event.preventDefault()
+        event.preventDefault();
         const children = event.target.children;
         Meteor.loginWithPassword(children[0].value, children[1].value);
     }
-})
+});
+
+
+Template.register.events({
+    "submit #registerForm"(event) {
+        event.preventDefault();
+        const children = event.target.children;
+        Accounts.createUser({username: children[0].value, password: children[1].value});
+    }
+});
