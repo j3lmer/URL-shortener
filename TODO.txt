@@ -1,8 +1,9 @@
 TODO:
 NTH:
--bugfix where user has to click continue twice in entry
--wachtwoord vergeten functionaliteit
--kleine popup geven bij falen in te loggen / registreren
+- bugfix where user has to click continue twice in entry
+- wachtwoord vergeten functionaliteit
+- kleine popup geven bij falen in te loggen / registreren
+- betere styling
 DOING:
 
 
@@ -22,5 +23,7 @@ DONE:
     checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
         als de link al bestaat (onder de current gebruiker), deze teruggeven (besloten dat dit wel mag)
         als de hash al bestaat, nieuwe hash genereren
+- remove insecure
+    vervang db interactie met Methods & calls
 
 

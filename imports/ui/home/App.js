@@ -41,20 +41,13 @@ Template.navBar.events({
 Template.userInputForm.events({
     "submit #submitForm"(event) {
         event.preventDefault();
-
         let tmpHash = self.crypto.randomUUID().slice(0, 8);
 
         while (Urls.find({hash: tmpHash}).count() !== 0) {
             tmpHash = self.crypto.randomUUID().slice(0, 8);
         }
 
-        Urls.insert({
-            hash: tmpHash,
-            link: event.target.text.value,
-            createdAt: new Date(),
-            userId: Meteor.userId()
-        });
-
+        Meteor.call('urls.insert', event.target.text.value, tmpHash);
         return false;
     }
 });
@@ -62,7 +55,7 @@ Template.userInputForm.events({
 Template.url.events({
     "submit #removeForm"(event) {
         event.preventDefault();
-        Urls.remove(this._id);
+        Meteor.call('urls.remove', this);
         return false;
     }
 });
