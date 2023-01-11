@@ -4,10 +4,6 @@ TODO:
         als de link al bestaat (onder de current gebruiker), deze teruggeven
         als de hash al bestaat, nieuwe hash genereren
 
-- user accounts, en alleen je eigen content zien
-    login functionaliteit maken
-    voeg userid toe aan db entry wanneer link submitted
-
 NTH:
 -wachtwoord vergeten functionaliteit
 -kleine popup geven bij falen in te loggen / registreren
@@ -22,7 +18,10 @@ DONE:
     hash opslaan in mongodb
 - entry verwijderen
 - redirecten naar daadwerkelijke url waar de gebruiker heen wil
--loginpagina maken
+- loginpagina maken
+- login functionaliteit maken
+- user accounts, en alleen je eigen content zien
+    voeg userid toe aan db entry wanneer link submitted
 
 
 

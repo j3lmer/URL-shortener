@@ -18,6 +18,10 @@ export const URLSchema = new SimpleSchema({
         autoValue: function () {
             return new Date();
         }
+    },
+    userId: {
+        type: String,
+        label: "The user ID associated with this url"
     }
 });
 

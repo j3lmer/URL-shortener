@@ -4,7 +4,7 @@ import './App.html';
 
 Template.showExistingLinks.helpers({
     urls() {
-        return Urls.find({});
+        return Urls.find({userId: Meteor.userId()});
     }
 });
 
@@ -14,11 +14,23 @@ Template.url.helpers({
     }
 });
 
+Template.navBar.helpers({
+    isUserLogged() {
+        return !!Meteor.user();
+    },
+    getUserName(){
+        return Meteor.user();
+    }
+});
+
 Template.navBar.events({
     "click #loginBtn"(event) {
         window.location.replace("/entry");
+    },
+    "click #logoutBtn"(event){
+        Meteor.logout();
     }
-})
+});
 
 Template.userInputForm.events({
     "submit #submitForm"(event) {
@@ -27,7 +39,8 @@ Template.userInputForm.events({
         Urls.insert({
             hash: self.crypto.randomUUID().slice(0, 8),
             link: event.target.text.value,
-            createdAt: new Date()
+            createdAt: new Date(),
+            userId: Meteor.userId()
         });
 
         return false;

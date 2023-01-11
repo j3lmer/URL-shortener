@@ -43,9 +43,14 @@
             <span class="navbar-brand mb-0 h1 ml-2">URL-shortener</span>
         </div>
         <div class="col"></div>
-        <div class="col col-1 align-self-end">
-<!--                loginbuttons deden het niet ivm bootstrap-->
-            <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+        <div class="col d-flex justify-content-end">
+            <!--                >loginButtons deden het niet ivm bootstrap dus custom pagina.-->
+            {{#if isUserLogged}}
+                <p class="text-white">{{getUserName.username}}</p>
+                <button id="logoutBtn" type="button" class="btn btn-primary mx-2">Logout</button>
+            {{else}}
+                <button id="loginBtn" type="button" class="btn btn-primary">Login</button>
+            {{/if}}
         </div>
     </nav>
 </template>
@@ -84,7 +89,7 @@
                     </div>
                     <div class="col d-flex justify-content-end">
                         <form id="removeForm" class="task-form">
-                            <button class="btn btn-danger pa-1 ma-0" type="submit">X</button>
+                            <button class="btn btn-danger pa-0 ma-0" type="submit">X</button>
                         </form>
                     </div>
                 </div>
