@@ -33,11 +33,15 @@ Meteor.methods({
         check(linkText, String);
 
         if (!Meteor.userId()) {
-            throw new Meteor.error("Not-Authorized");
+            throw new Meteor.Error("Not-Authorized");
         }
 
         if (linkText === "") {
-            throw new Meteor.error("Link cannot be empty");
+            throw new Meteor.Error("Link cannot be empty");
+        }
+
+        if(!isValidUrl(linkText)) {
+            throw new Meteor.Error("URL is not valid");
         }
 
         Urls.insert({
@@ -51,9 +55,19 @@ Meteor.methods({
         check(url._id, String);
 
         if (url.userId !== Meteor.userId()) {
-            throw new Meteor.error("Not-Authorized");
+            throw new Meteor.Error("Not-Authorized");
         }
         Urls.remove(url._id);
     }
 });
+
+const isValidUrl = urlString => {
+    var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // validate port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
+        '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+    return !!urlPattern.test(urlString);
+}
 

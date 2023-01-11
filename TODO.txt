@@ -4,6 +4,8 @@ NTH:
 - wachtwoord vergeten functionaliteit
 - kleine popup geven bij falen in te loggen / registreren
 - betere styling
+- bugfix where urls that are not urls, dont redirect to localhost.../url
+- popup for invalid urls or other errors.
 DOING:
 
 
