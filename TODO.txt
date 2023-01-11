@@ -1,10 +1,6 @@
 TODO:
-- wanneer input submitted:
-    checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
-        als de link al bestaat (onder de current gebruiker), deze teruggeven
-        als de hash al bestaat, nieuwe hash genereren
-
 NTH:
+-bugfix where user has to click continue twice in entry
 -wachtwoord vergeten functionaliteit
 -kleine popup geven bij falen in te loggen / registreren
 DOING:
@@ -22,6 +18,9 @@ DONE:
 - login functionaliteit maken
 - user accounts, en alleen je eigen content zien
     voeg userid toe aan db entry wanneer link submitted
-
+- wanneer input submitted:
+    checken of een de lokaal gegenereerde hash (en link) al bestaat in de database
+        als de link al bestaat (onder de current gebruiker), deze teruggeven (besloten dat dit wel mag)
+        als de hash al bestaat, nieuwe hash genereren
 
 

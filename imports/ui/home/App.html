@@ -21,19 +21,27 @@
             </div>
         </div>
 
-        <div class="row d-flex justify-content-center">
-            <div class="col">
-                <div class="row my-3">
-                    {{>userInputForm}}
+        {{#if isUserLogged}}
+            <div class="row d-flex justify-content-center">
+                <div class="col">
+                    <div class="row my-3">
+                        {{>userInputForm}}
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row d-flex justify-content-center">
-            <div class="col">
-                {{>showExistingLinks}}
+            <div class="row d-flex justify-content-center">
+                <div class="col">
+                    {{>showExistingLinks}}
+                </div>
             </div>
-        </div>
+            {{else}}
+            <div class="row d-flex justify-content-center">
+                <div class="col text-center">
+                    <p>Please log in to start generating short links!</p>
+                </div>
+            </div>
+        {{/if}}
     </div>
 </template>
 

@@ -2,6 +2,12 @@ import {Template} from 'meteor/templating';
 import {Urls} from "../../api/UrlCollection.js";
 import './App.html';
 
+Template.mainContainer.helpers({
+    isUserLogged() {
+        return !!Meteor.user();
+    },
+})
+
 Template.showExistingLinks.helpers({
     urls() {
         return Urls.find({userId: Meteor.userId()});
@@ -36,8 +42,14 @@ Template.userInputForm.events({
     "submit #submitForm"(event) {
         event.preventDefault();
 
+        let tmpHash = self.crypto.randomUUID().slice(0, 8);
+
+        while (Urls.find({hash: tmpHash}).count() !== 0) {
+            tmpHash = self.crypto.randomUUID().slice(0, 8);
+        }
+
         Urls.insert({
-            hash: self.crypto.randomUUID().slice(0, 8),
+            hash: tmpHash,
             link: event.target.text.value,
             createdAt: new Date(),
             userId: Meteor.userId()
